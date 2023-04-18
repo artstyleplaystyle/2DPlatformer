@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnReward : MonoBehaviour
+public class SpawnRewardStrawberry : MonoBehaviour
 {
     [SerializeField] private Strawberry _strawberry;
     [SerializeField] private Transform _path;
