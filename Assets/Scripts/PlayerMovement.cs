@@ -11,14 +11,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D;
     private Animator animation;
     private SpriteRenderer sprite;
+    private const string IsRunning = "running";
 
-    void Start()
+    private void Start()
     {
         animation = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -42,17 +43,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D) == true)
         {
-            animation.SetBool("running", true);
+            animation.SetBool(IsRunning, true);
             sprite.flipX = false;
-        }
+        
         else if (Input.GetKey(KeyCode.A) == true)
         {
-            animation.SetBool("running", true);
+            animation.SetBool(IsRunning, true);
             sprite.flipX = true;
         }
         else
         {
-            animation.SetBool("running", false);
+            animation.SetBool(IsRunning, false);
         }
     }
 }
